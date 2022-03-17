@@ -2,6 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
+## Development Setup
+### Prerequisites
+
+- Install [Node.js] which includes [Node Package Manager][npm]
+
+- Install the Angular CLI globally: npm install -g @angular/cli
+
+# Steps to run:
+
+- Download the project or run `git clone https://github.com/apurbo97/Satisfic-Frontend-Developer-Task.git`.
+
+- Open the project in VS Code and in the terminal run `npm install` for installing the packages.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
