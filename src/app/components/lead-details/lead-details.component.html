@@ -1,0 +1,246 @@
+<h1 mat-dialog-title>Add New Lead</h1>
+<mat-dialog-content class="mat-typography">
+  <p>Enter All Details</p>
+
+  <form [formGroup]="form">
+    <div class="row">
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="text"
+          matInput
+          placeholder="Title"
+          formControlName="title"
+          required
+        />
+        <mat-error *ngIf="form.get('title')?.hasError('required')">
+            Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="text"
+          matInput
+          placeholder="First Name"
+          formControlName="firstName"
+          required
+        />
+        <mat-error *ngIf="form.get('firstName')?.hasError('required')">
+            First Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="text"
+          matInput
+          placeholder="Last Name"
+          formControlName="lastName"
+          required
+        />
+        <mat-error *ngIf="form.get('lastName')?.hasError('required')">
+            Last Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="email"
+          matInput
+          placeholder="Email"
+          formControlName="email"
+          required
+        />
+        <mat-error *ngIf="form.get('email')?.hasError('email') && !form.get('email')?.hasError('required')">
+            Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="form.get('email')?.hasError('required')">
+            Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="text"
+          matInput
+          placeholder="Assignee"
+          readonly
+          formControlName="assignee"
+          required
+        />
+        <mat-error *ngIf="form.get('assignee')?.hasError('required')">
+            Assignee is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="text"
+          matInput
+          placeholder="Lead Source"
+          formControlName="leadSource"
+          required
+        />
+        <mat-error *ngIf="form.get('leadSource')?.hasError('required')">
+            Lead Source is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="number"
+          matInput
+          placeholder="Phone"
+          formControlName="phone"
+          max="999999999999"
+          min="10000000000"
+          required
+        />
+        <mat-error *ngIf="form.get('phone')?.hasError('required')">
+            Phone number is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="form.get('phone')?.hasError('max') && !form.get('phone')?.hasError('required')">
+            Please enter a valid 11 digit Phone Number
+        </mat-error>
+        <mat-error *ngIf="form.get('phone')?.hasError('min') && !form.get('phone')?.hasError('required')">
+            Please enter a valid 11 digit Phone Number </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="text"
+          matInput
+          placeholder="Company Name"
+          formControlName="companyName"
+          required
+        />
+        <mat-error *ngIf="form.get('companyName')?.hasError('required')">
+            Company Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="text"
+          matInput
+          placeholder="Industry"
+          formControlName="industry"
+          required
+        />
+        <mat-error *ngIf="form.get('industry')?.hasError('required')">
+            Industry is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-6 col-sm-6 col-xs-12">
+        <textarea
+          cols="30"
+          rows="3"
+          matInput
+          placeholder="Adress Line 1"
+          formControlName="adressLine1"
+          required
+        ></textarea>
+        <mat-error *ngIf="form.get('adressLine1')?.hasError('required')">
+            Adress Line 1 is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-6 col-sm-6 col-xs-12">
+        <textarea
+          cols="30"
+          rows="3"
+          matInput
+          placeholder="Adress Line 2"
+          formControlName="adressLine2"
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="text"
+          matInput
+          placeholder="City"
+          formControlName="city"
+          required
+        />
+        <mat-error *ngIf="form.get('city')?.hasError('required')">
+            City is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="text"
+          matInput
+          placeholder="State"
+          formControlName="state"
+          required
+        />
+        <mat-error *ngIf="form.get('state')?.hasError('required')">
+            State is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="text"
+          matInput
+          placeholder="Country"
+          formControlName="country"
+          required
+        />
+        <mat-error *ngIf="form.get('country')?.hasError('required')">
+            Country is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <input
+          type="number"
+          matInput
+          placeholder="Zip Code"
+          formControlName="zipcode"
+          max="99999999"
+          min="1000000"
+          required
+        />
+        <mat-error *ngIf="form.get('zipcode')?.hasError('required')">
+            Zip Code is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="form.get('zipcode')?.hasError('max') && !form.get('zipcode')?.hasError('required')">
+            Please enter a 6 digit Zip Code
+        </mat-error>
+        <mat-error *ngIf="form.get('zipcode')?.hasError('min') && !form.get('zipcode')?.hasError('required')">
+            Please enter a valid 6 digit Zip Code
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <mat-label>Lead Status</mat-label>
+        <mat-select formControlName="leadStatus">
+          <mat-option *ngFor="let status of statuss" [value]="status">
+            {{ status }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('leadRating')?.hasError('required')">
+                Lead Rating is <strong>required</strong>
+            </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+        <mat-label>Lead Rating</mat-label>
+        <mat-select formControlName="leadRating">
+          <mat-option *ngFor="let rating of ratings" [value]="rating">
+            {{ rating }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('leadRating')?.hasError('required')">
+                Lead Rating is <strong>required</strong>
+            </mat-error>
+      </mat-form-field>
+    </div>
+
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <div *ngIf="isAllowedToEdit && data.type == 'view' && !isEdit" class="ml-2">
+    <button mat-raised-button color="primary" (click)="toggleForm()">Edit</button>
+</div>
+<div *ngIf="isEdit" class="ml-2">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onUpdateClick()"
+    cdkFocusInitial
+    [disabled] = "!form.valid || submitClick"
+  >
+    Update
+  </button>
+</div>
+</mat-dialog-actions>

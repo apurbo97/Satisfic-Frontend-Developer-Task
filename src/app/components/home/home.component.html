@@ -1,0 +1,32 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="example-toolbar">
+      <button 
+      mat-icon-button 
+      (click)="snav.toggle()"
+      [ngClass]="{'display-none': !mobileQuery.matches}"
+      ><mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">Satisfic Frontend Developer Task</h1>
+      <div>
+        <button mat-icon-button (click)="isDark = !isDark;toggleDarkMode()"><mat-icon aria-hidden="false">{{ isDark ? "dark_mode" : "light_mode" }}</mat-icon></button>
+        
+        <button mat-button (click)="logout()">Logout</button>
+      </div>
+      
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [opened]="mobileQuery.matches ? false : true" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+          <a mat-list-item routerLink="/home"><mat-icon aria-hidden="false" aria-label="home">home</mat-icon>Home</a>
+          <!-- <a mat-list-item (click)="addLead();"><mat-icon aria-hidden="false" aria-label="home">add</mat-icon>Add Lead</a> -->
+          <a mat-list-item target="blank" href="https://shimmer-flute-3bd.notion.site/Satisfic-Frontend-Developer-Task-d88411d5d7c446ab89d995e057fe40e6"><mat-icon aria-hidden="false" aria-label="home">info</mat-icon>About This Project</a>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+
+</mat-sidenav-content>
+</mat-sidenav-container>
+</div>
+
