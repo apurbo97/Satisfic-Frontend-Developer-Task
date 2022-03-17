@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +28,16 @@ export class ApiServiceService {
 
   public updateLead(id:string,data:object):Observable<any>{
     return this.httpClient.put(this.baseURL+'data/'+id,data);
+  }
+
+  public updateBulkLead(selection:any,data:object):Observable<any>{
+    const arr = [];
+    for(let item of selection){
+      var res;
+      res = this.httpClient.patch(this.baseURL+'data/'+item.id, data);
+      arr.push(res)
+    }
+    return forkJoin(arr);
   }
 
 }

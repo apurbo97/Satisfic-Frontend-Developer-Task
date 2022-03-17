@@ -86,18 +86,18 @@
           matInput
           placeholder="Phone"
           formControlName="phone"
-          maxlength="10"
-          minlength="10"
+          max="9999999999"
+          min="1000000000"
           required
         />
         <mat-error *ngIf="form.get('phone')?.hasError('required')">
             Phone number is <strong>required</strong>
         </mat-error>
-        <mat-error *ngIf="form.get('phone')?.hasError('maxlength') && !form.get('phone')?.hasError('required')">
-            Please enter a valid 11 digit Phone Number
+        <mat-error *ngIf="form.get('phone')?.hasError('max') && !form.get('phone')?.hasError('required')">
+            Please enter a valid 10 digit Phone Number
         </mat-error>
-        <mat-error *ngIf="form.get('phone')?.hasError('minlength') && !form.get('phone')?.hasError('required')">
-            Please enter a valid 11 digit Phone Number </mat-error>
+        <mat-error *ngIf="form.get('phone')?.hasError('min') && !form.get('phone')?.hasError('required')">
+            Please enter a valid 10 digit Phone Number </mat-error>
       </mat-form-field>
       <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
         <input
@@ -187,17 +187,17 @@
           matInput
           placeholder="Zip Code"
           formControlName="zipcode"
-          maxlength="6"
-          minlength="6"
+          max="999999"
+          min="100000"
           required
         />
         <mat-error *ngIf="form.get('zipcode')?.hasError('required')">
             Zip Code is <strong>required</strong>
         </mat-error>
-        <mat-error *ngIf="form.get('zipcode')?.hasError('maxlength') && !form.get('zipcode')?.hasError('required')">
+        <mat-error *ngIf="form.get('zipcode')?.hasError('max') && !form.get('zipcode')?.hasError('required')">
             Please enter a 6 digit Zip Code
         </mat-error>
-        <mat-error *ngIf="form.get('zipcode')?.hasError('minlength') && !form.get('zipcode')?.hasError('required')">
+        <mat-error *ngIf="form.get('zipcode')?.hasError('min') && !form.get('zipcode')?.hasError('required')">
             Please enter a valid 6 digit Zip Code
         </mat-error>
       </mat-form-field>

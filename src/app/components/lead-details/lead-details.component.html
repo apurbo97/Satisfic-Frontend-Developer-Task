@@ -86,18 +86,18 @@
           matInput
           placeholder="Phone"
           formControlName="phone"
-          max="999999999999"
-          min="10000000000"
+          max="9999999999"
+          min="1000000000"
           required
         />
         <mat-error *ngIf="form.get('phone')?.hasError('required')">
             Phone number is <strong>required</strong>
         </mat-error>
         <mat-error *ngIf="form.get('phone')?.hasError('max') && !form.get('phone')?.hasError('required')">
-            Please enter a valid 11 digit Phone Number
+            Please enter a valid 10 digit Phone Number
         </mat-error>
         <mat-error *ngIf="form.get('phone')?.hasError('min') && !form.get('phone')?.hasError('required')">
-            Please enter a valid 11 digit Phone Number </mat-error>
+            Please enter a valid 10 digit Phone Number </mat-error>
       </mat-form-field>
       <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
         <input
@@ -187,8 +187,8 @@
           matInput
           placeholder="Zip Code"
           formControlName="zipcode"
-          max="99999999"
-          min="1000000"
+          max="999999"
+          min="100000"
           required
         />
         <mat-error *ngIf="form.get('zipcode')?.hasError('required')">
