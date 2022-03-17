@@ -7,9 +7,12 @@
       ><mat-icon>menu</mat-icon></button>
       <h1 class="example-app-name">Satisfic Frontend Developer Task</h1>
       <div>
-        <button mat-icon-button (click)="isDark = !isDark;toggleDarkMode()"><mat-icon aria-hidden="false">{{ isDark ? "dark_mode" : "light_mode" }}</mat-icon></button>
+        <button mat-icon-button (click)="isDark = !isDark;toggleDarkMode()"><mat-icon aria-hidden="false">{{ !isDark ? "dark_mode" : "light_mode" }}</mat-icon></button>
         
-        <button mat-button (click)="logout()">Logout</button>
+        <button mat-button (click)="logout()">
+          {{!mobileQuery.matches ? 'Logout' : ''}}
+          <mat-icon aria-hidden="false">logout</mat-icon>
+        </button>
       </div>
       
     </mat-toolbar>
@@ -24,6 +27,7 @@
       </mat-sidenav>
   
       <mat-sidenav-content>
+
         <router-outlet></router-outlet>
 
 </mat-sidenav-content>

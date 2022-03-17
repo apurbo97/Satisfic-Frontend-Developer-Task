@@ -1,12 +1,16 @@
-.table-div, .upper-div {
+.table-div, .upper-div, mat-paginator {
   width: 95%;
   margin: 0 auto;
+  overflow: auto;
 }
 
-
+.display-none{
+  display: none;
+}
 
 table{
   width: 100%;
+  min-width: 60rem;
 }
 
 .button-div{
